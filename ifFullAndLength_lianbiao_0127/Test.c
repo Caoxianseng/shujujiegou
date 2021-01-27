@@ -30,7 +30,7 @@ int main() {
 	pHead = create_list();//功能就是创建一个非循环单链表,并将该链表的头结点的地址(首地址)付给pHead
 	traverse_list(pHead);
 
-	if (if_empty(pHead)) 
+	if (if_empty(pHead))
 		printf("该链表为空\n");
 	else
 		printf("链表不为空\n");
@@ -106,7 +106,7 @@ void traverse_list(PNODE pHead) {//实现函数:链表遍历
 int  if_empty(PNODE pHead) {
 	if (pHead->pNext == NULL)
 		return 1;//说明就是为空,返回1
-	else 
+	else
 		return 0;
 }
 
@@ -146,9 +146,11 @@ int insert_list(PNODE pHead, int pos, int val) {
 		exit(-1);
 	}
 	pNew->data = val;
-	PNODE q = p->pNext;
+	// PNODE q = p->pNext;
+	// p->pNext = pNew;
+	// pNew->pNext = q;
+	pNew->pNext = p->pNext;
 	p->pNext = pNew;
-	pNew->pNext = q;
 	return 1;
 }
 
