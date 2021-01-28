@@ -1,0 +1,2 @@
+E:\比特学习\寒假学习比特\数据结构\shujujiegou\stack_PopAndPush_0128\Debug\stack_PopAndPush_0128.exe
+E:\比特学习\寒假学习比特\数据结构\shujujiegou\stack_PopAndPush_0128\Debug\stack_PopAndPush_0128.pdb
