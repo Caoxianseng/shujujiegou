@@ -69,9 +69,10 @@ void Travers(PQUEUE pS) {
 void clearQueue(PQUEUE pS) {
 	while (!isEmpty(pS)) {
 		PNODE pTemp = pS->pHead->pNext;
-		pS->pHead->pNext = pTemp->pNext;
-		free(pTemp);
-		pTemp = NULL;
+		free(pS->pHead);
+		pS->pHead = NULL;
+		pS->pHead = pTemp;
+		pTemp->pNext = pS->pHead->pNext ;
 	}
 	free(pS->pHead);
 	pS->pHead = NULL;
@@ -85,8 +86,19 @@ int main() {
 	Queue(&queue);
 	Travers(&queue);
 	InQueue(&queue, 1);
+	InQueue(&queue, 2);
+	InQueue(&queue, 3);
+	InQueue(&queue, 4);
+	InQueue(&queue, 5);
+	InQueue(&queue, 6);
 	Travers(&queue);
-
-
+	OutQueue(&queue);
+	Travers(&queue);
+	OutQueue(&queue);
+	Travers(&queue);
+	OutQueue(&queue);
+	Travers(&queue);
+	clearQueue(&queue);
+	Travers(&queue);
 	return 0;
 }
